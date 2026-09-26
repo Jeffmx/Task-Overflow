@@ -1,5 +1,34 @@
 * {
   padding: 0;
   margin: 0;
+  --main-color: #ffb300;
+  --secondary-color: #0074ff;
+  color: #1F2937;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F7FB;
+
+}
+
+h1 {
+  font-size: 1.9rem
+}
+
+h2 {
+  font-size: 1.6rem
+}
+
+p {
+  font-size: 1.3rem;
 }

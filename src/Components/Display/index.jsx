@@ -8,13 +8,12 @@ const DisplayContainer = styled.div`
   width: 270px;
   border-radius: 8px;
   padding: 10px;
-  background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 
   span{
     font-size: 1.5rem;
     font-weight: bold;
-    color: #4caf50;
+    color: #187ced;
   }
 `
 
@@ -26,4 +25,4 @@ export default function Display({ title, value, img }) {
       <h2><span>{value}</span></h2>
     </DisplayContainer>
   )
-}  
+}

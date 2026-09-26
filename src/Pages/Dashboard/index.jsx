@@ -1,70 +1,76 @@
 import styled from 'styled-components'
 import Display from '@/Components/Display'
+import RecentTasks from '@/Components/RecentsTasks'
+import RecentProjects from '@/Components/RecentsProjects'
+import TittleHolder from '@/Components/TittleHolder'
 import complete from '@/assets/complete.svg'
-import tasks from '@/assets/tasks.svg'
-import pending from '@/assets/pending.svg'
 import progress from '@/assets/progress.svg'
-
-const TittleHolder = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-`
+import pending from '@/assets/pending.svg'
+import tasks from '@/assets/tasks.svg'
 
 const DashboardContainer = styled.section`
   display: flex;
   flex-direction: column;
 `
+const StatsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat(2, 270px);
+  }
+
+  @media (max-width: 760px) {
+    grid-template-columns: repeat(1, 270px);
+  }
+`
+const RecentAtivity = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+`
 
 export default function Dashboard() {
   return (
     <DashboardContainer>
-      <TittleHolder>
-        <h1>Dashboard</h1>
-        <button>Add Task</button>
-      </TittleHolder>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+      <TittleHolder
+        title="Dashboard"
+        button={<button> <p>Adicionar Tarefa</p> </button>}
+      />
+      <StatsContainer>
         <Display
-          title="Total Tasks"
+          title="Total Tarefas"
           value="18"
           img={tasks}
         />
         <Display
-          title="Completed"
+          title="Concluídas"
           value="9"
           img={complete}
         />
         <Display
-          title="In Progress"
+          title="Em Progresso"
           value="6"
           img={progress}
         />
         <Display
-          title="Pending"
+          title="Pendentes"
           value="3"
           img={pending}
         />
-      </div>
-      <div>
-        <h2>Recent Tasks</h2>
-        <ul>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li>
-        </ul>
-      </div>
-      <div>
-        <div>
-          <h2>Projects</h2>
-          <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-          </ul>
-        </div>
-      </div>
+      </StatsContainer>
+      <RecentAtivity>
+        <RecentTasks />
+        <RecentProjects />
+      </RecentAtivity>
     </DashboardContainer>
   )
 }
