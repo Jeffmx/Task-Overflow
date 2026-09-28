@@ -1,22 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import styled     from 'styled-components'
 import SideBar    from './Components/SideBar'
-import Footer     from './Components/Footer'
 import Dashboard  from './Pages/Dashboard'
 import Projects   from './Pages/Projects'
 import Tasks      from './Pages/Tasks'
+import Reports    from './Pages/Reports'
 
 const AppLayout = styled.div`
   display: grid;
-  margin: 25px 10% 0;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: 1fr auto;
-  min-height: calc(100vh - 25px);
+  min-height: 100vh;
 
   @media (max-width: 770px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    margin: 25px 10px 0;
   }
 `
 
@@ -32,9 +30,9 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/reports" element={<Reports />} />
             </Routes>
           </main>
-          <Footer />
         </AppLayout>
       </BrowserRouter>
     </>

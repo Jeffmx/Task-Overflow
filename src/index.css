@@ -3,6 +3,8 @@
   margin: 0;
   --main-color: #ffb300;
   --secondary-color: #0074ff;
+  --active-color: #d3e6fd;
+  --container-color: #fefefe;
   color: #1F2937;
   text-decoration: none;
   list-style: none;
@@ -17,8 +19,14 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #F4F7FB;
+  background-color: #ebf1f8;
+}
 
+main{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
 }
 
 h1 {

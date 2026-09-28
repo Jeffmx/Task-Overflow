@@ -11,9 +11,10 @@ export default function SectionCard({ title, children }) {
     padding: 10px;
     width: max(270px, calc(50% - 10px));
     max-width: 560px;
-    height: 250px;
+    height: 400px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    background-color: var(--container-color);
 
     h2{
       padding-bottom: 20px;
