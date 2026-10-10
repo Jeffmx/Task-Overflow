@@ -48,6 +48,12 @@ const Activity = styled.div`
   border-radius: 8px;
   padding: 25px;
 `
+const Status =[
+  { name: "Total", img: total, value: 18 },
+  { name: "Pendentes", img: pending, value: 3 },
+  { name: "Em Progresso", img: progress, value: 6 },
+  { name: "Concluídas", img: complete, value: 9 }
+]
 
 export default function Dashboard() {
   return (
@@ -59,26 +65,14 @@ export default function Dashboard() {
         <MenuMobile/>
       </TittleHolder>
       <StatsContainer>
-        <Display
-          title="Total de Tarefas"
-          value="18"
-          img={total}
-        />
-        <Display
-          title="Pendentes"
-          value="3"
-          img={pending}
-        />
-        <Display
-          title="Em Progresso"
-          value="6"
-          img={progress}
-        />
-        <Display
-          title="Concluídas"
-          value="9"
-          img={complete}
-        />
+        {Status.map((stat, index) => (
+          <Display
+            key={index}
+            title={stat.name}
+            value={stat.value}
+            img={stat.img}
+          />
+        ))}
       </StatsContainer>
       <RecentAtivity>
         <RecentTasks />

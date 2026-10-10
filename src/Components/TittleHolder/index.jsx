@@ -8,6 +8,12 @@ export default function TitleHolder({ title, desc, children }) {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
+    @media (max-width: 770px) {
+      p{
+        display: none;
+      }
+    }
   `
   const PageResume = styled.div`
     

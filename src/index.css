@@ -5,6 +5,7 @@
   --secondary-color: #0074ff;
   --active-color: #d3e6fd;
   --container-color: #fefefe;
+  --background-color: #ebf1f8;
   color: #1F2937;
   text-decoration: none;
   list-style: none;
@@ -19,7 +20,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #ebf1f8;
+  background-color: var(--background-color);
 }
 
 main{

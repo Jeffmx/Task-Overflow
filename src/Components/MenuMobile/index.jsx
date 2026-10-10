@@ -4,7 +4,13 @@ import styled from 'styled-components'
 
 const ButtonStyled = styled.button`
   border: none;
+  display: none;
   cursor: pointer;
+  background: var(--background-color);
+
+  @media (max-width: 770px) {
+    display: block;
+  }
 `
 
 export default function MenuMobile() {

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const DisplayContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
 
   width: 270px;
