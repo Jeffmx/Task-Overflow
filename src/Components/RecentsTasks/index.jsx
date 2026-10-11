@@ -47,8 +47,14 @@ const TaskList = styled.ul`
   }
 
   @media (max-width: 480px) {
-    /* overflow: display; */
-    text-overflow: unset;
+    li{
+      display: block;
+    }
+
+    .task-title{
+      text-overflow: unset;
+      overflow: visible;
+    }
   }
 `
 
