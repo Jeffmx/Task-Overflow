@@ -1,0 +1,96 @@
+{
+  "projects": [
+    {
+      "id": "proj-1",
+      "titulo": "Redesign do Dashboard",
+      "desc": "Atualização visual e de usabilidade do painel principal.",
+      "tarefas": ["task-1", "task-2", "task-3"]
+    },
+    {
+      "id": "proj-2",
+      "titulo": "Migração para API v2",
+      "desc": "Migrar os endpoints antigos para a nova versão da API.",
+      "tarefas": ["task-4", "task-5"]
+    },
+    {
+      "id": "proj-3",
+      "titulo": "App Mobile",
+      "desc": "Primeira versão do aplicativo mobile.",
+      "tarefas": ["task-6", "task-7"]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "titulo": "Definir paleta de cores",
+      "desc": "Escolher as cores primária, secundária e de destaque.",
+      "projectId": "proj-1",
+      "prioridade": "Alta",
+      "status": "Concluída"
+    },
+    {
+      "id": "task-2",
+      "titulo": "Criar wireframes",
+      "desc": "Wireframes das telas principais do dashboard.",
+      "projectId": "proj-1",
+      "prioridade": "Média",
+      "status": "Em Andamento"
+    },
+    {
+      "id": "task-3",
+      "titulo": "Revisar tipografia",
+      "desc": "Ajustar tamanhos e pesos das fontes.",
+      "projectId": "proj-1",
+      "prioridade": "Baixa",
+      "status": "Pendente"
+    },
+    {
+      "id": "task-4",
+      "titulo": "Mapear endpoints antigos",
+      "desc": "Listar todos os endpoints que serão migrados.",
+      "projectId": "proj-2",
+      "prioridade": "Alta",
+      "status": "Concluída"
+    },
+    {
+      "id": "task-5",
+      "titulo": "Implementar autenticação v2",
+      "desc": "Adaptar o fluxo de login para o novo padrão.",
+      "projectId": "proj-2",
+      "prioridade": "Média",
+      "status": "Em Andamento"
+    },
+    {
+      "id": "task-6",
+      "titulo": "Configurar ambiente React Native",
+      "desc": "Setup inicial do projeto mobile.",
+      "projectId": "proj-3",
+      "prioridade": "Média",
+      "status": "Pendente"
+    },
+    {
+      "id": "task-7",
+      "titulo": "Tela de login",
+      "desc": "Implementar a tela de login do app.",
+      "projectId": "proj-3",
+      "prioridade": "Alta",
+      "status": "Concluída"
+    },
+    {
+      "id": "task-8",
+      "titulo": "Estudar boas práticas de acessibilidade",
+      "desc": "Pesquisar diretrizes WCAG para aplicar no projeto.",
+      "projectId": null,
+      "prioridade": "Baixa",
+      "status": "Pendente"
+    },
+    {
+      "id": "task-9",
+      "titulo": "Organizar backlog geral",
+      "desc": "Revisar e priorizar tarefas sem projeto definido.",
+      "projectId": null,
+      "prioridade": "Média",
+      "status": "Em Andamento"
+    }
+  ]
+}

@@ -69,6 +69,7 @@ export default function SideBar() {
         <img src={logo} alt='Task OverFlow' width="200" />
         {links.map((link) => (
           <MenuLink
+            key={link.name}
             to={link.path}
           >
            <img src={link.img} alt={link.name} width={30}/> 

@@ -8,6 +8,8 @@ import complete from '@/assets/complete.svg'
 import progress from '@/assets/progress.svg'
 import pending from '@/assets/pending.svg'
 import total from '@/assets/total.svg'
+import { useState, useEffect } from 'react'
+import { getData } from '@/services/dados.js'
 
 const DashboardContainer = styled.section`
   display: flex;
@@ -25,7 +27,7 @@ const StatsContainer = styled.div`
   }
 
   @media (max-width: 760px) {
-    grid-template-columns: repeat(1, 270px);
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 const RecentAtivity = styled.div`
@@ -48,28 +50,49 @@ const Activity = styled.div`
   border-radius: 8px;
   padding: 25px;
 `
-const Status =[
-  { name: "Total", img: total, value: 18 },
-  { name: "Pendentes", img: pending, value: 3 },
-  { name: "Em Progresso", img: progress, value: 6 },
-  { name: "Concluídas", img: complete, value: 9 }
+const Status = [
+  { name: 'Total', img: total, key: 'total' },
+  { name: 'Pendentes', img: pending, key: 'pendente' },
+  { name: 'Em Andamento', img: progress, key: 'em_andamento' },
+  { name: 'Concluídas', img: complete, key: 'concluida' },
 ]
 
 export default function Dashboard() {
+  const [count, setCount] = useState({
+    total: 0,
+    pendente: 0,
+    em_andamento: 0,
+    concluida: 0
+  });
+
+  useEffect(() => {
+    async function loadCount() {
+      const data = await getData()
+      const tasks = data.tasks
+      setCount({
+        total: tasks.length,
+        pendente: tasks.filter(task => task.status === 'Pendente').length,
+        em_andamento: tasks.filter(task => task.status === 'Em Andamento').length,
+        concluida: tasks.filter(task => task.status === 'Concluída').length
+      })
+    }
+    loadCount()
+  }, []);
+
   return (
     <DashboardContainer>
       <TittleHolder
         title="Dashboard"
         desc="Visão geral do seu trabalho em um só lugar."
       >
-        <MenuMobile/>
+        <MenuMobile />
       </TittleHolder>
       <StatsContainer>
-        {Status.map((stat, index) => (
+        {Status.map((stat) => (
           <Display
-            key={index}
+            key={stat.key}
             title={stat.name}
-            value={stat.value}
+            value={count[stat.key]}
             img={stat.img}
           />
         ))}

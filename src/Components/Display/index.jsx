@@ -11,6 +11,10 @@ const DisplayContainer = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, .1);
   background-color: var(--container-color);
 
+  div{
+    width: 65%;
+  }
+
   p{
     font-weight: bold;
   }
@@ -19,6 +23,11 @@ const DisplayContainer = styled.div`
     font-size: 1.5rem;
     font-weight: bold;
     color: #187ced;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
   }
 `
 
