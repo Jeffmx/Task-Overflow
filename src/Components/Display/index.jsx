@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const DisplayContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
 
   width: 270px;
@@ -26,7 +26,6 @@ const DisplayContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 100%;
     justify-content: center;
   }
 `

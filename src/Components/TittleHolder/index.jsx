@@ -13,7 +13,7 @@ const ContentContainer = styled.div`
   }
 `
 
-export default function TitleHolder({ title, desc, children }) {
+export default function TitleHolder({ title, desc=null, children }) {
 
   return (
     <ContentContainer>

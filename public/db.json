@@ -2,95 +2,70 @@
   "projects": [
     {
       "id": "proj-1",
-      "titulo": "Redesign do Dashboard",
-      "desc": "Atualização visual e de usabilidade do painel principal.",
-      "tarefas": ["task-1", "task-2", "task-3"]
+      "titulo": "Portal do Cliente",
+      "desc": "Área logada para clientes acompanharem pedidos e faturas.",
+      "tarefas": ["task-10", "task-11", "task-12", "task-13", "task-23", "task-24", "task-31", "task-32"]
     },
     {
       "id": "proj-2",
-      "titulo": "Migração para API v2",
-      "desc": "Migrar os endpoints antigos para a nova versão da API.",
-      "tarefas": ["task-4", "task-5"]
+      "titulo": "Redesign do Dashboard",
+      "desc": "Atualização visual e de usabilidade do painel principal.",
+      "tarefas": ["task-1", "task-2", "task-3", "task-17", "task-18", "task-33", "task-34"]
     },
     {
       "id": "proj-3",
       "titulo": "App Mobile",
       "desc": "Primeira versão do aplicativo mobile.",
-      "tarefas": ["task-6", "task-7"]
+      "tarefas": ["task-6", "task-7", "task-21", "task-22", "task-35"]
+    },
+    {
+      "id": "proj-4",
+      "titulo": "Integração com Pagamentos",
+      "desc": "Integração com gateway de pagamento e emissão de boletos.",
+      "tarefas": ["task-14", "task-15", "task-16", "task-25", "task-26"]
+    },
+    {
+      "id": "proj-5",
+      "titulo": "Migração para API v2",
+      "desc": "Migrar os endpoints antigos para a nova versão da API.",
+      "tarefas": ["task-4", "task-5", "task-19", "task-20"]
     }
   ],
   "tasks": [
-    {
-      "id": "task-1",
-      "titulo": "Definir paleta de cores",
-      "desc": "Escolher as cores primária, secundária e de destaque.",
-      "projectId": "proj-1",
-      "prioridade": "Alta",
-      "status": "Concluída"
-    },
-    {
-      "id": "task-2",
-      "titulo": "Criar wireframes",
-      "desc": "Wireframes das telas principais do dashboard.",
-      "projectId": "proj-1",
-      "prioridade": "Média",
-      "status": "Em Andamento"
-    },
-    {
-      "id": "task-3",
-      "titulo": "Revisar tipografia",
-      "desc": "Ajustar tamanhos e pesos das fontes.",
-      "projectId": "proj-1",
-      "prioridade": "Baixa",
-      "status": "Pendente"
-    },
-    {
-      "id": "task-4",
-      "titulo": "Mapear endpoints antigos",
-      "desc": "Listar todos os endpoints que serão migrados.",
-      "projectId": "proj-2",
-      "prioridade": "Alta",
-      "status": "Concluída"
-    },
-    {
-      "id": "task-5",
-      "titulo": "Implementar autenticação v2",
-      "desc": "Adaptar o fluxo de login para o novo padrão.",
-      "projectId": "proj-2",
-      "prioridade": "Média",
-      "status": "Em Andamento"
-    },
-    {
-      "id": "task-6",
-      "titulo": "Configurar ambiente React Native",
-      "desc": "Setup inicial do projeto mobile.",
-      "projectId": "proj-3",
-      "prioridade": "Média",
-      "status": "Pendente"
-    },
-    {
-      "id": "task-7",
-      "titulo": "Tela de login",
-      "desc": "Implementar a tela de login do app.",
-      "projectId": "proj-3",
-      "prioridade": "Alta",
-      "status": "Concluída"
-    },
-    {
-      "id": "task-8",
-      "titulo": "Estudar boas práticas de acessibilidade",
-      "desc": "Pesquisar diretrizes WCAG para aplicar no projeto.",
-      "projectId": null,
-      "prioridade": "Baixa",
-      "status": "Pendente"
-    },
-    {
-      "id": "task-9",
-      "titulo": "Organizar backlog geral",
-      "desc": "Revisar e priorizar tarefas sem projeto definido.",
-      "projectId": null,
-      "prioridade": "Média",
-      "status": "Em Andamento"
-    }
+    { "id": "task-1", "titulo": "Definir paleta de cores", "desc": "Escolher as cores primária, secundária e de destaque.", "projectId": "proj-2", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-2", "titulo": "Criar wireframes", "desc": "Wireframes das telas principais do dashboard.", "projectId": "proj-2", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-3", "titulo": "Revisar tipografia", "desc": "Ajustar tamanhos e pesos das fontes.", "projectId": "proj-2", "prioridade": "Baixa", "status": "Pendente" },
+    { "id": "task-4", "titulo": "Mapear endpoints antigos", "desc": "Listar todos os endpoints que serão migrados.", "projectId": "proj-5", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-5", "titulo": "Implementar autenticação v2", "desc": "Adaptar o fluxo de login para o novo padrão.", "projectId": "proj-5", "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-6", "titulo": "Configurar ambiente React Native", "desc": "Setup inicial do projeto mobile.", "projectId": "proj-3", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-7", "titulo": "Tela de login", "desc": "Implementar a tela de login do app.", "projectId": "proj-3", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-8", "titulo": "Estudar boas práticas de acessibilidade", "desc": "Pesquisar diretrizes WCAG para aplicar no projeto.", "projectId": null, "prioridade": "Baixa", "status": "Pendente" },
+    { "id": "task-9", "titulo": "Organizar backlog geral", "desc": "Revisar e priorizar tarefas sem projeto definido.", "projectId": null, "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-10", "titulo": "Modelar banco de dados do portal", "desc": "Definir tabelas e relacionamentos para pedidos e faturas.", "projectId": "proj-1", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-11", "titulo": "Tela de login do cliente", "desc": "Implementar autenticação e recuperação de senha.", "projectId": "proj-1", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-12", "titulo": "Listagem de pedidos", "desc": "Exibir pedidos com filtros por status e data.", "projectId": "proj-1", "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-13", "titulo": "Download de faturas em PDF", "desc": "Permitir que o cliente baixe a fatura em PDF.", "projectId": "proj-1", "prioridade": "Baixa", "status": "Pendente" },
+    { "id": "task-14", "titulo": "Escolher gateway de pagamento", "desc": "Comparar opções e definir o gateway definitivo.", "projectId": "proj-4", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-15", "titulo": "Integrar emissão de boletos", "desc": "Gerar boleto via API do gateway escolhido.", "projectId": "proj-4", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-16", "titulo": "Webhook de confirmação de pagamento", "desc": "Receber notificações do gateway e atualizar status.", "projectId": "proj-4", "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-17", "titulo": "Documentar componentes do design system", "desc": "Escrever guia de uso dos componentes reutilizáveis.", "projectId": "proj-2", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-18", "titulo": "Revisar acessibilidade do dashboard", "desc": "Aplicar contraste e navegação por teclado.", "projectId": "proj-2", "prioridade": "Alta", "status": "Pendente" },
+    { "id": "task-19", "titulo": "Criar testes unitários da API", "desc": "Cobrir endpoints principais com testes automatizados.", "projectId": "proj-5", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-20", "titulo": "Configurar CI/CD", "desc": "Pipeline de build, testes e deploy automático.", "projectId": "proj-5", "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-21", "titulo": "Publicar app na loja", "desc": "Preparar assets, descrição e submeter para review.", "projectId": "proj-3", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-22", "titulo": "Implementar notificações push", "desc": "Enviar notificações de tarefas e prazos.", "projectId": "proj-3", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-23", "titulo": "Criar dashboard de métricas do portal", "desc": "Gráficos de uso e pedidos por período.", "projectId": "proj-1", "prioridade": "Baixa", "status": "Pendente" },
+    { "id": "task-24", "titulo": "Implementar cancelamento de pedido", "desc": "Permitir que o cliente cancele pedidos elegíveis.", "projectId": "proj-1", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-25", "titulo": "Conciliar pagamentos recebidos", "desc": "Comparar transações do gateway com o financeiro.", "projectId": "proj-4", "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-26", "titulo": "Estudar LGPD para dados de pagamento", "desc": "Revisar requisitos legais e adequar o fluxo.", "projectId": "proj-4", "prioridade": "Alta", "status": "Pendente" },
+    { "id": "task-27", "titulo": "Revisar documentação interna", "desc": "Atualizar README e guias do time.", "projectId": null, "prioridade": "Baixa", "status": "Concluída" },
+    { "id": "task-28", "titulo": "Planejar sprint da próxima semana", "desc": "Definir prioridades e distribuir tarefas.", "projectId": null, "prioridade": "Média", "status": "Em Andamento" },
+    { "id": "task-29", "titulo": "Pesquisar novas ferramentas de monitoramento", "desc": "Avaliar opções para logs e alertas.", "projectId": null, "prioridade": "Baixa", "status": "Pendente" },
+    { "id": "task-30", "titulo": "Configurar backup automático", "desc": "Rotina de backup do banco e dos arquivos.", "projectId": null, "prioridade": "Alta", "status": "Concluída" },
+    { "id": "task-31", "titulo": "Implementar busca de pedidos", "desc": "Busca por número do pedido e período.", "projectId": "proj-1", "prioridade": "Média", "status": "Pendente" },
+    { "id": "task-32", "titulo": "Exportar relatório de faturas", "desc": "Exportar faturas em CSV para o cliente.", "projectId": "proj-1", "prioridade": "Baixa", "status": "Em Andamento" },
+    { "id": "task-33", "titulo": "Criar testes de componentes", "desc": "Testes unitários dos componentes do design system.", "projectId": "proj-2", "prioridade": "Média", "status": "Concluída" },
+    { "id": "task-34", "titulo": "Otimizar carregamento do dashboard", "desc": "Reduzir tempo de carregamento inicial.", "projectId": "proj-2", "prioridade": "Alta", "status": "Pendente" },
+    { "id": "task-35", "titulo": "Configurar deep linking", "desc": "Abrir telas específicas do app via link.", "projectId": "proj-3", "prioridade": "Baixa", "status": "Concluída" }
   ]
 }

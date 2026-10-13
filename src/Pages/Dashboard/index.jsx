@@ -4,22 +4,25 @@ import RecentTasks from '@/Components/RecentsTasks'
 import RecentProjects from '@/Components/RecentsProjects'
 import TittleHolder from '@/Components/TittleHolder'
 import MenuMobile from '@/Components/MenuMobile'
+import Activity from '@/Components/Activity'
 import complete from '@/assets/complete.svg'
 import progress from '@/assets/progress.svg'
 import pending from '@/assets/pending.svg'
 import total from '@/assets/total.svg'
 import { useState, useEffect } from 'react'
-import { getData } from '@/services/dados.js'
+import { useDados } from '@/Hooks/useDados.js'
 
 const DashboardContainer = styled.section`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `
 const StatsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 20px;
   justify-content: center;
+  justify-items: center;
+  margin-bottom: 20px;
   gap: 20px;
 
   @media (max-width: 1300px) {
@@ -27,6 +30,7 @@ const StatsContainer = styled.div`
   }
 
   @media (max-width: 760px) {
+    justify-items: center;
     grid-template-columns: repeat(1, 1fr);
   }
 `
@@ -36,19 +40,13 @@ const RecentAtivity = styled.div`
   justify-content: center;
   gap: 20px;
 
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
+
   @media (max-width: 480px) {
     justify-content: center;
   }
-`
-const Activity = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  background-color: var(--container-color);
-  border-radius: 8px;
-  padding: 25px;
 `
 const Status = [
   { name: 'Total', img: total, key: 'total' },
@@ -58,16 +56,16 @@ const Status = [
 ]
 
 export default function Dashboard() {
+  const {data} = useDados()
   const [count, setCount] = useState({
     total: 0,
     pendente: 0,
     em_andamento: 0,
     concluida: 0
-  });
+  });  
 
   useEffect(() => {
     async function loadCount() {
-      const data = await getData()
       const tasks = data.tasks
       setCount({
         total: tasks.length,
@@ -77,7 +75,7 @@ export default function Dashboard() {
       })
     }
     loadCount()
-  }, []);
+  }, [data]);  
 
   return (
     <DashboardContainer>
@@ -101,17 +99,7 @@ export default function Dashboard() {
         <RecentTasks />
         <RecentProjects />
       </RecentAtivity>
-      <Activity>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h2>Atividade Recente</h2>
-          <button>Ver Todas</button>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <p>Design da Página Inicial"</p>
-          </div>
-        </div>
-      </Activity>
+      <Activity/>
     </DashboardContainer>
   )
 }

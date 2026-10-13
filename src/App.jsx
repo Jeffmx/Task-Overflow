@@ -13,7 +13,7 @@ const AppLayout = styled.div`
   min-height: 100vh;
 
   @media (max-width: 770px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
   }
 `

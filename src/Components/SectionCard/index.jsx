@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 const CardContainer = styled.div`
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     border-radius: 8px;
     margin-bottom: 20px;
-    padding: 25px;
+    padding: 15px;
     width: calc(${props => props.$width} - 10px);
     height: 400px;
     text-align: left;
@@ -15,6 +14,10 @@ const CardContainer = styled.div`
 
     h2{
       padding-bottom: 20px;
+    }
+
+    @media (max-width: 1300px) {
+      width: 100%;
     }
 
     @media (max-width: 480px) {

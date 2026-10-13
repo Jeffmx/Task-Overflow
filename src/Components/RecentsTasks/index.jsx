@@ -1,6 +1,6 @@
-import { getData } from '@/services/dados.js'
-import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useEffect, useState } from 'react'
+import { useDados } from '@/Hooks/useDados.js'
 import SectionCard from '@/Components/SectionCard'
 import NameWrapper from '@/Components/NameWraper'
 
@@ -12,13 +12,13 @@ const TaskHeader = styled.div`
   text-align: left;
   gap: 15px;
   border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
 
-  .task-title{
-    width: 350px;
-  }
-
-  .task-status{
-    width: 150px;
+  div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
   }
 
   @media (max-width: 480px) {
@@ -37,58 +37,55 @@ const TaskList = styled.ul`
     align-items: center;
   }
 
-  .task-title{
+  .task-info{
     text-align: left;
     font-weight: 400;
-    width: 350px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 480px) {    
     li{
       display: block;
     }
-
-    .task-title{
-      text-overflow: unset;
-      overflow: visible;
-    }
   }
 `
-
 export default function RecentTasks() {
-  const [tasks, setTasks] = useState({ tasks: [] })
+  const { data } = useDados()
+  const [filtrados, setFiltrados] = useState([])
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const result = await getData()
-        setTasks(result)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
+    function notConcluded() {
+      setFiltrados(data.tasks.filter(t => t.status !== 'Concluída'))
     }
 
-    fetchData()
-  }, [])
+    notConcluded()
+  }, [data])
 
   return (
     <SectionCard title="Tarefas Recentes" width='60%'>
       <TaskHeader>
-        <p className="task-title">Tarefa</p>
-        <p className="task-status">Status</p>
-        <p className="task-priority">Prioridade</p>
+        <p>Tarefa</p>
+        <div>
+          <p>Status</p>
+          <p>Prioridade</p>
+        </div>
       </TaskHeader>
       <TaskList>
-        {tasks.tasks.slice(-5).reverse().map((task) => (
-          <li key={task.id}>
-            <p className="task-title">{task.titulo}</p>
-            <NameWrapper width='150px' name={task.status} />
-            <NameWrapper name={task.prioridade} />
-          </li>
-        ))}
+        {filtrados.slice(-5).reverse().map((task) => {
+          if (task.status !== 'Concluída')
+            return (
+              <li key={task.id} style={{ justifyContent: 'space-between' }}>
+                <p className='task-info'>{task.titulo}</p>
+                <div style={{ display: 'flex', width: '250px' }}>
+
+                  <NameWrapper width='170px' name={task.status} />
+                  <NameWrapper name={task.prioridade} />
+                </div>
+              </li>
+            )
+        })}
       </TaskList>
     </SectionCard>
 
