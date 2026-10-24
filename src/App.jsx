@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { MenuProvider } from '@/Context/MenuContext'
 import styled     from 'styled-components'
 import SideBar    from './Components/SideBar'
 import Dashboard  from './Pages/Dashboard'
 import Projects   from './Pages/Projects'
 import Tasks      from './Pages/Tasks'
-import Reports    from './Pages/Reports'
 
 const AppLayout = styled.div`
   display: grid;
@@ -24,15 +24,16 @@ function App() {
     <>
       <BrowserRouter>
         <AppLayout>
-          <SideBar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/tasks" element={<Tasks />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/reports" element={<Reports />} />
-            </Routes>
-          </main>
+          <MenuProvider>
+            <SideBar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/tasks" element={<Tasks />} />
+                <Route path="/projects" element={<Projects />} />
+              </Routes>
+            </main>
+          </MenuProvider>
         </AppLayout>
       </BrowserRouter>
     </>

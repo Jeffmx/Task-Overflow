@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import { useMenu } from '@/Context/MenuContext'
 import dashboard from '@/assets/dashboard.svg'
 import projects from '@/assets/projects.svg'
 import reports from '@/assets/reports.svg'
@@ -13,7 +15,7 @@ const AsideStyled = styled.aside`
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-  transition: .1s ease;
+  transition: .2s ease;
 
   a{
     color: var(--secondary-color);
@@ -24,9 +26,8 @@ const AsideStyled = styled.aside`
     z-index: 999;
     height: 100vh;
     position: absolute;
-    transform: translateX(-360px);
+    transform: translateX(${props => props.$aberto ? '0' : '-430px'});
     background: var(--container-color);
-    box-shadow: rgba(0, 0, 0, .6) 90px 0px 20px 20px;
   }
 `
 const MenuContainer = styled.div`
@@ -55,16 +56,30 @@ const MenuLink = styled(NavLink)`
   }
 `
 const links = [
-  {path: '/', img: dashboard, name: 'Dashboard'},
-  {path: '/tasks', img: tasks, name: 'Tarefas'},
-  {path: '/projects', img: projects, name: 'Projetos'},
-  {path: '/reports', img: reports, name: 'Relatório'},
+  { path: '/', img: dashboard, name: 'Dashboard' },
+  { path: '/tasks', img: tasks, name: 'Tarefas' },
+  { path: '/projects', img: projects, name: 'Projetos' },
 ]
 
 export default function SideBar() {
+  const { aberto, setAberto } = useMenu()
+  const asideRef = useRef(null)
+
+  useEffect(() => {
+    if (!aberto) return
+
+    function handleClick(e) {
+      if (asideRef.current && !asideRef.current.contains(e.target)) {
+        setAberto(false)
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [aberto, setAberto])
 
   return (
-    <AsideStyled>
+    <AsideStyled $aberto={aberto} ref={asideRef}>
       <MenuContainer>
         <img src={logo} alt='Task OverFlow' width="200" />
         {links.map((link) => (
@@ -72,8 +87,8 @@ export default function SideBar() {
             key={link.name}
             to={link.path}
           >
-           <img src={link.img} alt={link.name} width={30}/> 
-           <p>{link.name}</p>
+            <img src={link.img} alt={link.name} width={30} />
+            <p>{link.name}</p>
           </MenuLink>
         ))}
       </MenuContainer>

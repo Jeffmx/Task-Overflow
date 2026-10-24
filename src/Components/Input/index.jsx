@@ -17,7 +17,6 @@ const InputStyled = styled.input`
 `
 
 export default function Input({ type, placeholder, value, onChange, icon }) {
-  console.log(icon);
   return (
     <InputStyled
       type={type}

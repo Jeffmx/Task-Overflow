@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import menu from '@/assets/menu.svg'
 import styled from 'styled-components'
+import menu from '@/assets/menu.svg'
+import { useMenu } from '@/Context/MenuContext'
 
 const ButtonStyled = styled.button`
   border: none;
@@ -14,10 +14,10 @@ const ButtonStyled = styled.button`
 `
 
 export default function MenuMobile() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const {aberto, setAberto} = useMenu()
 
   return (
-    <ButtonStyled onClick={() => setMenuOpen(!menuOpen)}>
+    <ButtonStyled onClick={(e) => { e.stopPropagation(); setAberto(!aberto) }}>
       <img src={menu} width={40} alt="Menu" />
     </ButtonStyled>
   )

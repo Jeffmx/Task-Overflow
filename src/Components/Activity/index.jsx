@@ -66,7 +66,6 @@ export default function Activity() {
   return (
     <ActivityContainer>
       <TittleHolder title='Últimas conclusões'>
-        <button>Ver Todas</button>
       </TittleHolder>
       <ActivityDisplay>
         {projectsConcluded.map((pc) => (
