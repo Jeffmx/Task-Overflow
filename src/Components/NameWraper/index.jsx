@@ -26,7 +26,7 @@ export default function NameWrapper({ name, width = 'auto' }) {
     switch (name) {
       case 'Pendente':
         return '#ff732e';
-      case 'Em Andamento':
+      case 'Progredindo':
         return 'blue';
       case 'Concluída':
         return 'green';

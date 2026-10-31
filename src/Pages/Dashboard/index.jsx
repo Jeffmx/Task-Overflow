@@ -51,7 +51,7 @@ const RecentAtivity = styled.div`
 const Status = [
   { name: 'Total', img: total, key: 'total' },
   { name: 'Pendentes', img: pending, key: 'pendente' },
-  { name: 'Em Andamento', img: progress, key: 'em_andamento' },
+  { name: 'Progredindo', img: progress, key: 'progredindo' },
   { name: 'Concluídas', img: complete, key: 'concluida' },
 ]
 
@@ -60,7 +60,7 @@ export default function Dashboard() {
   const [count, setCount] = useState({
     total: 0,
     pendente: 0,
-    em_andamento: 0,
+    progredindo: 0,
     concluida: 0
   });  
 
@@ -70,7 +70,7 @@ export default function Dashboard() {
       setCount({
         total: tasks.length,
         pendente: tasks.filter(task => task.status === 'Pendente').length,
-        em_andamento: tasks.filter(task => task.status === 'Em Andamento').length,
+        progredindo: tasks.filter(task => task.status === 'Progredindo').length,
         concluida: tasks.filter(task => task.status === 'Concluída').length
       })
     }
